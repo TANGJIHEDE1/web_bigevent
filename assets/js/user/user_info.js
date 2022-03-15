@@ -2,6 +2,7 @@ $(function() {
   var form = layui.form
   var layer = layui.layer
 
+  //自定义验证规则
   form.verify({
     nickname: function(value) {
       if (value.length > 6) {
@@ -16,7 +17,7 @@ $(function() {
   function initUserInfo() {
     $.ajax({
       method: 'GET',
-      url: './my/userinfo',
+      url: '/my/userinfo',
       success: function(res) {
         if (res.status !== 0) {
           return layer.msg('获取用户信息失败！')
@@ -39,10 +40,10 @@ $(function() {
   $('.layui-form').on('submit', function(e) {
     // 阻止表单的默认提交行为
     e.preventDefault()
-    // 发起 ajax 数据请求
+    // 发起 ajax 数据请求 
     $.ajax({
       method: 'POST',
-      url: './my/userinfo',
+      url: '/my/userinfo',
       data: $(this).serialize(),
       success: function(res) {
         if (res.status !== 0) {

@@ -30,6 +30,7 @@ $(function() {
   // 通过代理的形式，为 form-add 表单绑定 submit 事件
   $('body').on('submit', '#form-add', function(e) {
     e.preventDefault()
+
     $.ajax({
       method: 'POST',
       url: '/my/article/addcates',
@@ -44,6 +45,7 @@ $(function() {
         layer.close(indexAdd)
       }
     })
+
   })
 
   // 通过代理的形式，为 btn-edit 按钮绑定点击事件
@@ -69,7 +71,7 @@ $(function() {
   })
 
   // 通过代理的形式，为修改分类的表单绑定 submit 事件
-  $('body').on('submit', '#form-edit', function(e) {
+  $('body').on('submit', '#form-edit', function(e) {     
     e.preventDefault()
     $.ajax({
       method: 'POST',
@@ -99,7 +101,7 @@ $(function() {
             return layer.msg('删除分类失败！')
           }
           layer.msg('删除分类成功！')
-          layer.close(index)
+          layer.close(index) 
           initArtCateList()
         }
       })

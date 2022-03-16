@@ -34,7 +34,7 @@ $(function() {
 
   initTable()
   initCate()
-
+  
   // 获取文章列表数据的方法
   function initTable() {
     $.ajax({
@@ -82,7 +82,7 @@ $(function() {
     q.cate_id = cate_id
     q.state = state
     // 根据最新的筛选条件，重新渲染表格的数据
-    initTable()
+    initTable()  
   })
 
   // 定义渲染分页的方法
@@ -99,7 +99,7 @@ $(function() {
       // 触发 jump 回调的方式有两种：
       // 1. 点击页码的时候，会触发 jump 回调
       // 2. 只要调用了 laypage.render() 方法，就会触发 jump 回调
-      jump: function(obj, first) {
+      jump: function(obj, first) { 
         // 可以通过 first 的值，来判断是通过哪种方式，触发的 jump 回调
         // 如果 first 的值为 true，证明是方式2触发的
         // 否则就是方式1触发的
